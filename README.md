@@ -2,6 +2,9 @@
 ## Python Examples
 
 This repository contains sample Python code for Intersight Cloud Orchestrator (ICO)<br>
+
+<b>DISCLAIMER: This is NOT an official Cisco repository and comes with NO WARRANTY AND/OR SUPPORT<br>
+Please check LICENSE-CISCO for additional details</b>
  
 ### Instructions
 1. [Generate an API key and secret from Intersight](https://intersight.com/apidocs/introduction/security/%23generating-api-keys&sa=D&ust=1612024909729000&usg=AOvVaw362rkbFxqhX_Mo8w0xkDJG/#generating-api-keys)

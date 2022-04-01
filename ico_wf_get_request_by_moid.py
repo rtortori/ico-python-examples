@@ -1,9 +1,7 @@
-from itertools import count
 import credentials
 from pprint import pprint
 from intersight.api import workflow_api
 from intersight.rest import ApiException
-import sys
 
 # The MOID of the request we want details for
 moid = '62473732696f6e2d315a0379'

@@ -1,12 +1,9 @@
 import credentials
 from intersight.api import workflow_api
 from intersight.rest import ApiException
-from pprint import pprint
 from intersight.model.workflow_workflow_info import WorkflowWorkflowInfo
 from intersight.model.mo_base_mo_relationship import MoBaseMoRelationship
 from intersight.model.workflow_workflow_definition_relationship import WorkflowWorkflowDefinitionRelationship
-import sys
-
 
 # Variables. Change accordingly
 workflow_name = 'Deploy a Virtual Machine'
