@@ -12,8 +12,17 @@ It uses argparse to take in the following CLI arguments:
 import argparse
 import os
 import datetime
-
 import intersight
+import re
+
+# Determine if user is using API Key V2 or V3
+api_key_version = 3 # Defaults to V3
+
+if os.getenv('INTERSIGHT_API_PRIVATE_KEY'):
+    with open(os.getenv('INTERSIGHT_API_PRIVATE_KEY')) as keyfile:
+        firstline = keyfile.readline().rstrip()
+        if 'RSA' in firstline:
+            api_key_version = 2
 
 # This argument parser instance should be used within scripts where additional CLI arguments are required
 Parser = argparse.ArgumentParser(description='Intersight Python SDK credential lookup')
@@ -47,7 +56,7 @@ def config_credentials(description=None):
 
     if args.api_key_id:
         # HTTP signature scheme.
-        if args.api_key_legacy:
+        if args.api_key_legacy or api_key_version == 2:
             signing_scheme = intersight.signing.SCHEME_RSA_SHA256
             signing_algorithm = intersight.signing.ALGORITHM_RSASSA_PKCS1v15
         else:
